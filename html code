@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apelsin clicker</title>
+    <style>
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        img {
+            width: 500px;
+            height: 500px;
+        }
+        body {
+    background-color: #ffd105;
+}
+    </style>
+</head>
+<body>
+  <h1>apelsin clicker</h1>
+    <p>Score: <span id="score">0</span></p>
+    <button onclick="incrementScore()">
+        <img src="https://cdn.pixabay.com/photo/2012/04/26/12/52/orange-42395_1280.png" alt="Click me!">
+    </button>
+    <br>
+    <h1>köp mera +30 varje gång</h1>
+    <button onclick="buyMultiplier()">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/019/787/007/small/buy-now-icon-buy-now-button-on-transparent-background-free-png.png" alt="Buy Multiplier (Cost: 30)">
+    </button>
+
+    <script>
+        let score = 0;
+        let multiplier = 1;
+        let cost = 20;
+
+        function incrementScore() {
+            score += multiplier;
+            document.getElementById("score").textContent = score;
+        }
+
+        function buyMultiplier() {
+            if (score >= cost) {
+                score -= cost;
+                multiplier++;
+                cost += 30;
+                document.getElementById("score").textContent = score;
+                document.getElementById("cost").textContent = cost;
+            }
+        }
+    </script>
+    <h3>av emrik</h3>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Video Embed Example</title>
+</head>
+<body>
+
+<button onclick="playVideo()">klicka ej</button>
+
+<!-- YouTube Video Container -->
+<div id="player"></div>
+
+<script>
+  // This function will be called when the button is clicked
+  function playVideo() {
+    // Replace 'YOUR_VIDEO_ID' with the actual YouTube video ID you want to display
+    var videoId = 'hvL1339luv0?si=d3DGjvAc_g5o6Iqo';
+
+    // Create a YouTube player
+    var player = new YT.Player('player', {
+      height: '360',
+      width: '640',
+      videoId: videoId,
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  // This function will be called when the YouTube player is ready
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+  // This function will be called when the YouTube player's state changes
+  function onPlayerStateChange(event) {
+    // You can add any custom behavior here based on the player's state
+  }
+</script>
+
+<!-- Load the YouTube API script -->
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
